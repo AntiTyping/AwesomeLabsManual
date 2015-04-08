@@ -1,6 +1,6 @@
 # AwesomeLabsManual
 
-if you wont a clean Rails install:
+if you want install a clean Rails:
 
 LINUX
 ----
@@ -34,5 +34,25 @@ Instalacja Bazy Danych Postgresql
   1. przełaczanie usera postgresql: ```sudo su - postgres```
   2. tworzymy usera dla naszego projektu: ```createuser -d -P <name_user>```
 
+
+Start SupportHub Project
+---------------------------------
+1. Go To https://help.github.com/articles/generating-ssh-keys/#platform-linux and do step 2 & 4 
+  wygenerowanie certyfikatu i wgranie go na GitHub pozwala na połączenie komputera z kontem na GitHub
+2. Install Git: ```sudo apt-get install git```
+3. pobieramy kod: ```git clone git@github.com:AntiTyping/SupportHub.git```
+4. ```cd SupportHub```
+5. Install Gems: ```bundle install```
+  1. jeżeli występuje problem z gem’em pg 0.17.1 to prawdopodobnie pomoże: ```sudo apt-get install libpq-dev postgresql```
+6. jeżeli mamy Postgresql dodajemu usera:
+  1. ```sudo su - postgres```
+  2. ```createuser -d -P supporthub```
+7. Create user with password and change config/database.yml to contain this password. !Two places: development and test section)
+8. Create databases: ```rake db:setup```
+9. Seed the databases: ```rake db:seed```
+10. Run the tests: ```rake```
+11. all should be green
+12. Start server: ```rails s```
+13. Open browser: http://localhost:3000
 
 AwesomeLabsManual
