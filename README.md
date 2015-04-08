@@ -29,7 +29,9 @@ Instalacja Ruby on Rails
 
 Instalacja Bazy Danych Postgresql
 ------------------------------------------
-1. instalacja: ```sudo apt-get install postgresql```
+1. instalacja: 
+  1. ```sudo apt-get install postgresql```
+  2. ``sudo apt-get install libpq-dev postgresql```
 2. Aby dodać użytkownika do bazy:
   1. przełaczanie usera postgresql: ```sudo su - postgres```
   2. tworzymy usera dla naszego projektu: ```createuser -d -P <name_user>```
@@ -43,7 +45,6 @@ Start SupportHub Project
 3. pobieramy kod: ```git clone git@github.com:AntiTyping/SupportHub.git```
 4. ```cd SupportHub```
 5. Install Gems: ```bundle install```
-  1. jeżeli występuje problem z gem’em pg 0.17.1 to prawdopodobnie pomoże: ```sudo apt-get install libpq-dev postgresql```
 6. jeżeli mamy Postgresql dodajemu usera:
   1. ```sudo su - postgres```
   2. ```createuser -d -P supporthub```
